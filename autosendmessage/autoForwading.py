@@ -39,7 +39,6 @@ while True:
         if group.is_group:
             i+=1
             groups.append(group)
-            print(group.id)
             # send message to group
             try:
                 if i==5:
