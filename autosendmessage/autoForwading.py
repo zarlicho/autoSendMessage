@@ -20,8 +20,6 @@ if not client.is_user_authorized():
     client.send_code_request(phone)
     client.sign_in(phone, input('Enter the code: '))
 
-
-
 chats = []
 last_date = None
 chunk_size = 200
@@ -29,15 +27,10 @@ groups=[]
 bot = []
 i=0
 channel = "19375432"
-# get all channels
-channel_username = 'DataSaham2Bot'# your channel
-groupUsername = "JOSS ALERT"# your group
+
 print(Fore.LIGHTGREEN_EX + '[+] ' + Fore.RESET + 'pilih text midnight atau night: ', end="")
 text = input("")
-# message = []
-# for message in client.get_messages(channel_username, limit=1):
-#     # get last message text
-#     message = message.message
+
 pesanMid = """📹𝑺𝑪𝑹𝑰𝑴 𝑳𝑰𝑽𝑬 𝑹𝑴 𝟯 •
 📹𝑺𝑪𝑹𝑰𝑴 𝑳𝑰𝑽𝑬 𝑹𝑴 𝟯 •
 
@@ -243,8 +236,6 @@ while True:
         if group.is_group:
             i+=1
             groups.append(group)
-            # print(group.title, group.id)
-            # send message to group
             try:
                 if i==5:
                     print(Fore.LIGHTGREEN_EX+"[+] "+Fore.RED+"stoping")
@@ -261,20 +252,5 @@ while True:
             except Exception as e:
                 print(e)
 
-# @client.on(events.NewMessage)
-# async def handle_new_message(event):
-#     if event.is_private:
-#         chat = event.message.message
-#         user = event.message.sender_id
-#         print(user)
-        # get all group 
-#         if user == 1623988554: # group id
-# #             print("bot detected")
-#             if event.message.media:
-#                 if event.message.media.photo:
-#                     await event.message.forward_to(groupUsername)
-#             else:
-#                 await event.message.forward_to(groupUsername)
-# if get new message
 client.start()
 client.run_until_disconnected()
